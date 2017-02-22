@@ -99,8 +99,6 @@ module RIPE
       end
     end
 
-    private
-
     def attributes
       @attributes ||= new? ? {} : @data['attributes']['attribute'].each_with_object({}) do |attr, hash|
         hash[attr['name']] ||= AttributeSet.new(@client, attr['name'])
