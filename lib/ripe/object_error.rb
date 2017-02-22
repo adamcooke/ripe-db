@@ -18,7 +18,11 @@ module RIPE
     end
 
     def args
-      @hash['args'].map { |a| a['value'] }
+      if @hash['args'].is_a?(Array)
+        @hash['args'].map { |a| a['value'] }
+      else
+        []
+      end
     end
 
   end
